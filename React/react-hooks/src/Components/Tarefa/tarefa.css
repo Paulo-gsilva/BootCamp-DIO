@@ -1,0 +1,28 @@
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid gray;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    width: 5%;
+}
+
+.botao-adicionar-ativo, .botao-subtrair-ativo{
+    border: none;
+    background: transparent;
+    height: 100%;
+    font-size: larger;
+    color: red;
+    cursor: pointer;
+}
+
+.botao-subtrair-desativo{
+    border: none;
+    background: transparent;
+    height: 100%;
+    font-size: larger;
+    color: rgb(105, 105, 105);
+    cursor: pointer;
+}

@@ -1,8 +1,14 @@
 import './App.css';
+import Counter from '../Counter/Counter';
+import SmartCounter from '../SmartCounter/SmartCounter';
+import Tarefa from '../Tarefa/tarefa';
 
 function App() {
   return (
-    <h1>SAAAALVE</h1>
+    <div>
+      <h1>SAAAALVE</h1>
+      <Tarefa />
+    </div>
   );
 }
 
