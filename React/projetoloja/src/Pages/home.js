@@ -50,7 +50,7 @@ export default function Home() {
                         <Paper className={classes.paper}>
                             <Grid container direction='column'>
                                 <Grid item>
-                                    <img width="140px" src="./images/produtos/fla.jpg" alt="Flamengo 2020" />
+                                    <img width="140px" src="../../public/images/super.jpg" alt="Flamengo 2020" />
                                     <Typography variant='h6'>
                                         Produto
                                     </Typography>
@@ -66,7 +66,7 @@ export default function Home() {
                         <Paper className={classes.paper}>
                             <Grid container direction='column'>
                                 <Grid item>
-                                    <img width="140px" src="./images/produtos/fla.jpg" alt="Flamengo 2020" />
+                                    <img width="140px" src="../../public/images/super.jpg" alt="Flamengo 2020" />
                                     <Typography variant='h6'>
                                         Produto
                                     </Typography>
