@@ -1,7 +1,20 @@
 import React from "react";
-import { Grid, Button, Container, Typography, Paper, List, ListItem, ListItemText } from '@material-ui/core/';
+import { Grid, Button, Container, Typography, Paper, List, ListItem, ListItemText, makeStyles } from '@material-ui/core/';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        marginTop: '5px',
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center'
+    },
+}));
 
 export default function Home() {
+    const classes = useStyles();
+
     return (
         <Container maxWidth="x1">
             <Grid container spacing={3} className={classes.root}>
