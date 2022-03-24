@@ -1,10 +1,11 @@
 import React from "react";
+import { Grid, Typography } from '@material-ui/core/';
 
 export default function Header() {
     return (
         <Grid container direction="row" justify="space-between" alignItems="center" xs={12}>
             <Typography variant='h3'>
-                Dio Shopping
+                Loja Camisas
             </Typography>
             <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target="#CartModal">
                 <span><i className="fas fa-shopping-cart"></i></span>
