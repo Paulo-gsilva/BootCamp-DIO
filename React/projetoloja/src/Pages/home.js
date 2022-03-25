@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Button, Typography, Paper, List, ListItem, ListItemText, makeStyles } from '@material-ui/core/';
+import Item from "../Components/Item";
+import { Grid, Button, Typography, Paper, List, makeStyles } from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,24 +24,7 @@ export default function Home() {
                         Categorias
                     </Typography>
                     <List>
-                        <ListItem>
-                            <ListItemText
-                                primary="Times nacionais"
-                                secondary="3"
-                            />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText
-                                primary="Times internacionais"
-                                secondary="3"
-                            />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText
-                                primary="Times históricos"
-                                secondary="3"
-                            />
-                        </ListItem>
+                        <Item />
                     </List>
                 </Paper>
             </Grid>
