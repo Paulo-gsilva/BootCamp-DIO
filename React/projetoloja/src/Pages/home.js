@@ -24,7 +24,18 @@ export default function Home() {
                         Categorias
                     </Typography>
                     <List>
-                        <Item />
+                        <Item
+                            ItemName="Camisas Nacionais"
+                            ItemQuantity="5"
+                        />
+                        <Item
+                            ItemName="Camisas Internacionais"
+                            ItemQuantity="3"
+                        />
+                        <Item
+                            ItemName="Camisas Históricas"
+                            ItemQuantity="2"
+                        />
                     </List>
                 </Paper>
             </Grid>
