@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Item from "../Components/Item";
 import Camisas from "../Components/Camisa";
 import { Grid, Typography, Paper, List, makeStyles } from '@material-ui/core/';
@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
     const classes = useStyles();
-    
+
+    const [number, setNumber] = useState(0);
+
+
     return (
         <Grid container spacing={3} className={classes.root}>
             <Grid item xs={3}>
