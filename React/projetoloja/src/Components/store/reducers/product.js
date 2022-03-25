@@ -88,3 +88,5 @@ const productList = [
         selected: false
     },
 ]
+
+export default productList;
