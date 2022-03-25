@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "../Components/Item";
-import { Grid, Button, Typography, Paper, List, makeStyles } from '@material-ui/core/';
+import Camisas from "../Components/Camisa";
+import { Grid, Typography, Paper, List, makeStyles } from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,70 +41,14 @@ export default function Home() {
                 </Paper>
             </Grid>
             <Grid container xs={9} spacing={3} className={classes.root}>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>
-                        <Grid container direction='column'>
-                            <Grid item>
-                                <img width="140px" src="../../public/images/super.jpg" alt="Flamengo 2020" />
-                                <Typography variant='h6'>
-                                    Produto
-                                </Typography>
-                                <Typography variant='subtitle1'>
-                                    R$ 99.00
-                                </Typography>
-                            </Grid>
-                            <Button variant="contained">Adicionar</Button>
-                        </Grid>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>
-                        <Grid container direction='column'>
-                            <Grid item>
-                                <img width="140px" src="../../public/images/super.jpg" alt="Flamengo 2020" />
-                                <Typography variant='h6'>
-                                    Produto
-                                </Typography>
-                                <Typography variant='subtitle1'>
-                                    R$ 99.00
-                                </Typography>
-                            </Grid>
-                            <Button variant="contained">Adicionar</Button>
-                        </Grid>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>
-                        <Grid container direction='column'>
-                            <Grid item>
-                                <img width="140px" src="./images/produtos/fla.jpg" alt="Flamengo 2020" />
-                                <Typography variant='h6'>
-                                    Produto
-                                </Typography>
-                                <Typography variant='subtitle1'>
-                                    R$ 99.00
-                                </Typography>
-                            </Grid>
-                            <Button variant="contained">Adicionar</Button>
-                        </Grid>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>
-                        <Grid container direction='column'>
-                            <Grid item>
-                                <img width="140px" src="./images/produtos/fla.jpg" alt="Flamengo 2020" />
-                                <Typography variant='h6'>
-                                    Produto
-                                </Typography>
-                                <Typography variant='subtitle1'>
-                                    R$ 99.00
-                                </Typography>
-                            </Grid>
-                            <Button variant="contained">Adicionar</Button>
-                        </Grid>
-                    </Paper>
-                </Grid>
+                <Camisas name="Flamengo 2020" price="25.00" image="../../public/images/super.jpg">Flamengo</Camisas>
+                <Camisas name="Ponte Preta 2020" price="25.00" image="../../public/images/super.jpg">Ponte Preta</Camisas>
+                <Camisas name="Corinthians 2020" price="25.00" image="../../public/images/super.jpg">Corinthians</Camisas>
+                <Camisas name="Ceará 2020" price="25.00" image="../../public/images/super.jpg">Ceará</Camisas>
+                <Camisas name="São Paulo 2020" price="25.00" image="../../public/images/super.jpg">São Paulo</Camisas>
+                <Camisas name="Cruzeiro 2020" price="25.00" image="../../public/images/super.jpg">Cruzeiro</Camisas>
+                <Camisas name="Internacional 2020" price="25.00" image="../../public/images/super.jpg">Internacional</Camisas>
+                <Camisas name="Grêmio 2020" price="25.00" image="../../public/images/super.jpg">Grêmio</Camisas>
             </Grid>
         </Grid>
     );
