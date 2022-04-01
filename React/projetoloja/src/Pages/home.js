@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux"; //conecta o estado ao componente
+import { Grid, Typography, Paper, List, makeStyles } from '@material-ui/core/';
 import Item from "../Components/Item";
 import Camisas from "../Components/Camisa";
-import { Grid, Typography, Paper, List, makeStyles } from '@material-ui/core/';
+import productList from "../Components/store/reducers/product";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,11 +16,32 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Home() {
+const Home = () => {
+    const products = useSelector(state => state.products);
+
     const classes = useStyles();
+    const categorys = productList.map(
+        item => {
+            const container = {};
+            container['id'] = item.id_category;
+            container['name'] = item.name_category;
+            return container;
+        }
+    )
 
-    const [number, setNumber] = useState(0);
+    const categoryItem = categorys.map(JSON.stringify)
+        .filter((item, index, array) => {
+            return array.indexOf(item, index + 1) === -1 //-1 aprova exclusão
+        })
+        .map(JSON.parse);
 
+
+    const quantityCategory = categorys.map(categoryName => categoryName.name);
+    let count = {};
+    for (let i = 0; i < quantityCategory.length; i++) {
+        let key = quantityCategory[i];
+        count[key] = (count[key] ? count[key] + 1 : 1);
+    }
 
     return (
         <Grid container spacing={3} className={classes.root}>
@@ -28,31 +51,29 @@ export default function Home() {
                         Categorias
                     </Typography>
                     <List>
-                        <Item
-                            ItemName="Camisas Nacionais"
-                            ItemQuantity="5"
-                        />
-                        <Item
-                            ItemName="Camisas Internacionais"
-                            ItemQuantity="3"
-                        />
-                        <Item
-                            ItemName="Camisas Históricas"
-                            ItemQuantity="2"
-                        />
+                        {categoryItem.map(
+                            item => {
+                                return (
+                                    <Item
+                                        key={item.id}
+                                        ItemName={item.name}
+                                        ItemQuantity={count[item.name]}
+                                    />
+                                );
+                            }
+                        )}
                     </List>
                 </Paper>
             </Grid>
             <Grid container xs={9} spacing={3} className={classes.root}>
-                <Camisas name="Flamengo 2020" price="25.00" image="../../public/images/super.jpg">Flamengo</Camisas>
-                <Camisas name="Ponte Preta 2020" price="25.00" image="../../public/images/super.jpg">Ponte Preta</Camisas>
-                <Camisas name="Corinthians 2020" price="25.00" image="../../public/images/super.jpg">Corinthians</Camisas>
-                <Camisas name="Ceará 2020" price="25.00" image="../../public/images/super.jpg">Ceará</Camisas>
-                <Camisas name="São Paulo 2020" price="25.00" image="../../public/images/super.jpg">São Paulo</Camisas>
-                <Camisas name="Cruzeiro 2020" price="25.00" image="../../public/images/super.jpg">Cruzeiro</Camisas>
-                <Camisas name="Internacional 2020" price="25.00" image="../../public/images/super.jpg">Internacional</Camisas>
-                <Camisas name="Grêmio 2020" price="25.00" image="../../public/images/super.jpg">Grêmio</Camisas>
+                {productList.map(item => {
+                    return (
+                        <Camisas key={item.id_product} name={item.name_product} price={item.price}>{item.name_product}</Camisas>
+                    )
+                })}
             </Grid>
         </Grid>
     );
 }
+
+export default Home; //conectando o estado a home

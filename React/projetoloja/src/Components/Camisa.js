@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Camisas({name, price, image, children}) {
+export default function Camisas({name, price, children}) {
     const classes = useStyles();
 
     return (
@@ -17,7 +17,6 @@ export default function Camisas({name, price, image, children}) {
             <Paper className={classes.paper}>
                 <Grid container direction='column'>
                     <Grid item>
-                        <img width="140px" src={image} alt={name} />
                         <Typography variant='h6'>
                             {children}
                         </Typography>

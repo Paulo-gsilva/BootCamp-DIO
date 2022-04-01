@@ -20,10 +20,10 @@ export default function Header() {
             </button>
 
             {/* Modal */}
-            <div class="modal fade" id="CartModal" tabindex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
+            <div className="modal fade" id="CartModal" tabIndex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
+                <div clasName="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
                             <h5 className="modal-title" id="CartModalLabel">Meu Carrinho</h5>
                             <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -62,7 +62,7 @@ export default function Header() {
                             </table>
                         </div>
 
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>

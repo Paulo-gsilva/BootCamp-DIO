@@ -86,7 +86,7 @@ const productList = [
         id_category: 1,
         name_category: "Clubes Brasileiros",
         selected: false
-    },
+    }
 ]
 
 export default productList;
