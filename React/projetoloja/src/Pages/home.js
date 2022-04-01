@@ -18,18 +18,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const products = useSelector(state => state.products);
-
     const classes = useStyles();
+
     const categorys = productList.map(
         item => {
             const container = {};
             container['id'] = item.id_category;
             container['name'] = item.name_category;
-            return container;
+            return container; //coloca todos os produtos dentro de um objeto CATEGORY apenas com id e nome
         }
     )
 
-    const categoryItem = categorys.map(JSON.stringify)
+    const categoryItem = categorys.map(JSON.stringify) //converte o objeto CATEGORYS em string para filtrar itens repetidos
         .filter((item, index, array) => {
             return array.indexOf(item, index + 1) === -1 //-1 aprova exclusão
         })
@@ -40,7 +40,7 @@ const Home = () => {
     let count = {};
     for (let i = 0; i < quantityCategory.length; i++) {
         let key = quantityCategory[i];
-        count[key] = (count[key] ? count[key] + 1 : 1);
+        count[key] = (count[key] ? count[key] + 1 : 1); //comapra cada nome e sua quantidade
     }
 
     return (
